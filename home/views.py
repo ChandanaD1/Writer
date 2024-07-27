@@ -1,16 +1,6 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
-def index(request):
-    return render(request, 'index.html')
-
-def aboutus(request):
-    return render(request, 'aboutus.html')
-
-def contact(request):
-    return render(request, 'contact.html')
-
-def login(request):
-    return render(request, 'login.html')
-
-def signup(request):
-    return render(request, 'signup.html')
+@login_required
+def home(request):
+    return render(request, 'home.html')
