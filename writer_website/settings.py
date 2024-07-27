@@ -39,13 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #my apps
-    'main',
+    'welcome',
     'home',
     'projects',
     'chat',
     'planner',
     'journal',
 ]
+
+AUTH_USER_MODEL = 'welcome.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -124,14 +126,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'main/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'welcome/static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-AUTH_USER_MODEL = 'main.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'

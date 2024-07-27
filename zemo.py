@@ -1,3 +1,1 @@
-import os
-
-print(os.uname())
+print("Hi")
